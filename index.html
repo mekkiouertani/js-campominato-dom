@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campo Minato</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <div class="container h-100">
+            <h1 class="text-uppercase text-center">game_<span>campo_minato</span> </h1>
+            <div class="d-flex justify-content-center m-5">
+                <div id="playground"></div>
+                <div class="d-flex flex-column align-content-center justify-content-center align-items-center">
+                    <button class="px-3  position-relative">
+                        <span>PLAY</span>
+                        <span class="d-block position-absolute bottom-0 ">Hello!</span>
+                    </button>
+                    <div>
+                        <label for="select" class="d-block text-center">Livello:</label>
+                        <select name="select" id="select">
+                            <option value="easy">Facile</option>
+                            <option value="medium">Normale</option>
+                            <option value="hard">Difficile</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
