@@ -20,7 +20,7 @@ const NUM_BOMBS = 16;
     const playGround = document.getElementById('playground');
     
     playGround.innerHTML = '';
-    //scoreCounter.innerHTML = '';
+    scoreCounter.innerHTML = '';
     
     let numSquare;
    
