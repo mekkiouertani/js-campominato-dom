@@ -20,7 +20,7 @@ const NUM_BOMBS = 16;
     const playGround = document.getElementById('playground');
     
     playGround.innerHTML = '';
-    scoreCounter.innerHTML = '';
+    //scoreCounter.innerHTML = '';
     
     let numSquare;
    
@@ -66,7 +66,8 @@ function drawSquare(squareIndex, numSquare, bombs){
         if(bombs.includes(parseInt(squareIndex +1))){
             square.classList.add('bg-danger');
             square.innerHTML = '<i class="fa-solid fa-bomb fa-beat"></i>';
-            alert('hai perso');
+            alert('Hai perso!');
+            score = 0;
         }
     });
 
@@ -89,8 +90,7 @@ function bombsGenerator(numSquare){
 
         if(!bombList.includes(randomBombs)){
             bombList.push(randomBombs);
-        } else{
-        }
+        } 
     } 
     return bombList;
 }
