@@ -1,16 +1,6 @@
-//creiamo la base su html con div che sarà la scacchiera e un bottone
-//OBIETTIVO: al click del bottone dobbiamo stampare dei quadrati per formare una scacchiera
-//creiamo una funzione che creetà i vari quadrati
-    //dichiarare il numero di quadratini che vogliamo
-    //inserire la formula della radice quadrata
-//dichiariamo il campo da gioco (playground) dentro il la funzione del click
-//creiamo ciclo for per far stampare i quarati
-//aggiungiamo classi per dare effetti ai quadrati
-   
-//BONUS
-    //prendiamo il valore del selectValue
-    //const numSquare diventa let con stringa vuota
-    //assegniamo il valore scelto dall'utente a let numSquare 
+//inseriamo utility per generatore numeri casuali
+//creiamo una const che conterra il numero delle bombe
+//creiamo un array vuoto dove metteremo i numeri casuali(bombe sparse)
 
 
  //prendiamo il valore di select
@@ -26,7 +16,7 @@
      //evitiamo di stampare infiniti campi da gioco
      playGround.innerHTML = '';
      
-     //togliamo il valore alla variabile del numero di quadratini(sarà aggiunto nel ciclo for)
+     //dichiaro la variabile del numero di quadratini
      let numSquare;
  
      //usiamo il ciclo for per stampare il numero di quadratini corrente
