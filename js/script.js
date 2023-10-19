@@ -58,6 +58,7 @@ function drawSquare(squareIndex, numSquare, bombs){
     square.textContent = squareIndex + 1;
     //aggiungiamo evento per quando clicchiamo sul quadratino
     square.addEventListener('click', function(){
+        if (square.classList.contains('bg-primary')) return;
         square.classList.add('bg-primary')
         square.style.color = 'white';
         console.log('hai cliccato sul numero: ', this.textContent);
