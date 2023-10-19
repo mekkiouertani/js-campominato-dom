@@ -3,7 +3,7 @@
 //creiamo un array vuoto dove metteremo i numeri casuali(bombe sparse)
 //creiamo una funziona che genera le bombe
 
-
+let score = 0;
 //il nostro numero di bombe
 const NUM_BOMBS = 16;
 
@@ -12,18 +12,18 @@ const NUM_BOMBS = 16;
 
  //dichiariamo il bottone dall'html
  const btn = document.querySelector('button');
-
+ let scoreCounter;
  //creiamo evento sul click
  btn.addEventListener('click', function(){
-
-    //dichiariamo il div dove stamperemo i nostri quadrati
+    
+    scoreCounter = document.getElementById('score');
     const playGround = document.getElementById('playground');
-    //evitiamo di stampare infiniti campi da gioco
+    
     playGround.innerHTML = '';
-
-    //dichiaro la variabile del numero di quadratini
+    scoreCounter.innerHTML = '';
+    
     let numSquare;
-
+   
     //usiamo il ciclo for per stampare il numero di quadratini corrente
     if (selectLevel.value === 'easy'){
         numSquare = 100;
@@ -32,6 +32,7 @@ const NUM_BOMBS = 16;
     } else if (selectLevel.value === 'hard'){
         numSquare = 42;
     } 
+
     let bombs = bombsGenerator(numSquare);
     //creiamo il ciclo for per far stampare i 100 quadratini
     for (let i = 0; i < numSquare; i++){
@@ -55,16 +56,16 @@ function drawSquare(squareIndex, numSquare, bombs){
 
     //aggiungiamo il numero indice dentro il quadrato
     square.textContent = squareIndex + 1;
-
     //aggiungiamo evento per quando clicchiamo sul quadratino
     square.addEventListener('click', function(){
-        square.classList.add('active');
+        square.classList.add('bg-primary')
         square.style.color = 'white';
         console.log('hai cliccato sul numero: ', this.textContent);
-        
+        updateScore();
         if(bombs.includes(parseInt(squareIndex +1))){
             square.classList.add('bg-danger');
             square.innerHTML = '<i class="fa-solid fa-bomb fa-beat"></i>';
+            alert('hai perso');
         }
     });
 
@@ -87,8 +88,13 @@ function bombsGenerator(numSquare){
 
         if(!bombList.includes(randomBombs)){
             bombList.push(randomBombs);
-        } 
+        } else{
+        }
     } 
     return bombList;
 }
 
+function updateScore(){
+    score++;
+    scoreCounter.innerHTML = `000${score}`;
+}
