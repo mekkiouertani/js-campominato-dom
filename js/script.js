@@ -3,38 +3,42 @@
 //creiamo un array vuoto dove metteremo i numeri casuali(bombe sparse)
 
 
+//il nostro numero di bombe
+const NUM_BOMBS = 16;
+
  //prendiamo il valore di select
  const selectLevel = document.getElementById('select');    
 
  //dichiariamo il bottone dall'html
  const btn = document.querySelector('button');
- 
+
  //creiamo evento sul click
  btn.addEventListener('click', function(){
-     //dichiariamo il div dove stamperemo i nostri quadrati
-     const playGround = document.getElementById('playground');
-     //evitiamo di stampare infiniti campi da gioco
-     playGround.innerHTML = '';
-     
-     //dichiaro la variabile del numero di quadratini
-     let numSquare;
- 
-     //usiamo il ciclo for per stampare il numero di quadratini corrente
-     if (selectLevel.value === 'easy'){
-         numSquare = 100;
-     } else if (selectLevel.value === 'medium'){
-         numSquare = 90;
-     } else if (selectLevel.value === 'hard'){
-         numSquare = 42;
-     } 
- 
-     //creiamo il ciclo for per far stampare i 100 quadratini
-     for (let i = 0; i < numSquare; i++){
-         let square = drawSquare(i, numSquare);
-         //appendiamo i quadratini dentro il campo da gioco
-         playGround.append(square);
-     }
- });
+
+    //dichiariamo il div dove stamperemo i nostri quadrati
+    const playGround = document.getElementById('playground');
+    //evitiamo di stampare infiniti campi da gioco
+    playGround.innerHTML = '';
+
+    //dichiaro la variabile del numero di quadratini
+    let numSquare;
+
+    //usiamo il ciclo for per stampare il numero di quadratini corrente
+    if (selectLevel.value === 'easy'){
+        numSquare = 100;
+    } else if (selectLevel.value === 'medium'){
+        numSquare = 90;
+    } else if (selectLevel.value === 'hard'){
+        numSquare = 42;
+    } 
+    let bombs = bombsGenerator(numSquare);
+    //creiamo il ciclo for per far stampare i 100 quadratini
+    for (let i = 0; i < numSquare; i++){
+        let square = drawSquare(i, numSquare, bombs);
+        //appendiamo i quadratini dentro il campo da gioco
+        playGround.append(square);
+    }
+});
  
  //funzione per stampare i quadrati
  function drawSquare(squareIndex, numSquare){
@@ -60,4 +64,24 @@
  
      //aggiungiamo il return di square
      return square;
- };
+};
+
+//creiamo una funzione che cra le bombe
+function bombsGenerator(numSquare){
+    
+    //array che conterrà le bombe
+    let bombList = [];
+
+    //ciclo while 
+    while (bombList.length < NUM_BOMBS){
+        
+        let randomBombs = getRndInteger (1, numSquare)
+        console.log(randomBombs);
+
+        if(!bombList.includes(randomBombs)){
+            bombList.push(randomBombs);
+        } 
+    } 
+    return bombList;
+}
+
