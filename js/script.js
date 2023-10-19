@@ -1,6 +1,7 @@
 //inseriamo utility per generatore numeri casuali
 //creiamo una const che conterra il numero delle bombe
 //creiamo un array vuoto dove metteremo i numeri casuali(bombe sparse)
+//creiamo una funziona che genera le bombe
 
 
 //il nostro numero di bombe
@@ -71,7 +72,8 @@ function bombsGenerator(numSquare){
     
     //array che conterrà le bombe
     let bombList = [];
-
+    console.log(bombList);
+    
     //ciclo while 
     while (bombList.length < NUM_BOMBS){
         
