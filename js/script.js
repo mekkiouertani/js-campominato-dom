@@ -41,30 +41,35 @@ const NUM_BOMBS = 16;
     }
 });
  
- //funzione per stampare i quadrati
- function drawSquare(squareIndex, numSquare){
-     //formula per il quadrato
-     const squareWidth = Math.sqrt(numSquare);
-     //creiamo il div che diventerà un quadrato
-     const square = document.createElement('div');
-     //diamo una dimensione al div per farlo diventare un quadrato
-     square.style.width = `calc(100% / ${squareWidth})`;
-     square.style.height = square.style.width;
-     //aggiungiamo la classe con i bordi per vedere il div
-     square.classList.add('square');
- 
-     //aggiungiamo il numero indice dentro il quadrato
-     square.textContent = squareIndex + 1;
- 
-     //aggiungiamo evento per quando clicchiamo sul quadratino
-     square.addEventListener('click', function(){
-         square.classList.add('active');
-         square.style.color = 'white';
-         console.log('hai cliccato sul numero: ', this.textContent);
-     });
- 
-     //aggiungiamo il return di square
-     return square;
+//funzione per stampare i quadrati
+function drawSquare(squareIndex, numSquare, bombs){
+    //formula per il quadrato
+    const squareWidth = Math.sqrt(numSquare);
+    //creiamo il div che diventerà un quadrato
+    const square = document.createElement('div');
+    //diamo una dimensione al div per farlo diventare un quadrato
+    square.style.width = `calc(100% / ${squareWidth})`;
+    square.style.height = square.style.width;
+    //aggiungiamo la classe con i bordi per vedere il div
+    square.classList.add('square');
+
+    //aggiungiamo il numero indice dentro il quadrato
+    square.textContent = squareIndex + 1;
+
+    //aggiungiamo evento per quando clicchiamo sul quadratino
+    square.addEventListener('click', function(){
+        square.classList.add('active');
+        square.style.color = 'white';
+        console.log('hai cliccato sul numero: ', this.textContent);
+        
+        if(bombs.includes(parseInt(squareIndex +1))){
+            square.classList.add('bg-danger');
+            square.innerHTML = '<i class="fa-solid fa-bomb fa-beat"></i>';
+        }
+    });
+
+    //aggiungiamo il return di square
+    return square;
 };
 
 //creiamo una funzione che cra le bombe
@@ -73,7 +78,7 @@ function bombsGenerator(numSquare){
     //array che conterrà le bombe
     let bombList = [];
     console.log(bombList);
-    
+
     //ciclo while 
     while (bombList.length < NUM_BOMBS){
         
