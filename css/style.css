@@ -45,6 +45,20 @@ button span:first-child{
 button span.d-block{
     text-shadow: 2px 2px 8px #9bedab;
     right: 5px;
+    left: 4px;
+    
+    margin-bottom: 5px;
+    height: 40px;
+	border-bottom: 6px inset rgba(0,0,0,.5);
+	border-left: 6px inset rgba(0,0,0,.5);
+	border-right: 6px inset rgba(255,255,255,.5);
+	border-top: 6px inset rgba(255,255,255,.5);
+	cursor: pointer;
+	text-transform: uppercase;
+    width: auto;
+}
+button span.d-block:hover{
+    transform: scale(1.1);
 }
 .square{
     border: 2px solid #f0f0f0;
