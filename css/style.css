@@ -26,7 +26,12 @@ h1 span{
     background-image: url(https://media.istockphoto.com/id/460329283/vector/abstract-businessman-with-huge-bomb.jpg?s=612x612&w=0&k=20&c=DTGL2DtiVIV68E9vqR8-_zKMDpD7xETceJhnipMXFCs=);
     background-repeat: no-repeat;
     background-size: cover;
-    
+    border-bottom: 2px inset rgba(0,0,0,.5);
+	border-left: 2px inset rgba(0,0,0,.5);
+	border-right: 2px inset rgba(255,255,255,.5);
+	border-top: 2px inset rgba(255,255,255,.5);
+    box-shadow: 0px 5px 20px #6baa7e;
+
     display: flex; 
     flex-wrap: wrap;
 }
