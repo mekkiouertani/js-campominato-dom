@@ -69,8 +69,9 @@ function drawSquare(squareIndex, numSquare, bombs){
         if(bombs.includes(parseInt(squareIndex +1))){
             square.classList.add('bg-danger');
             square.innerHTML = '<i class="fa-solid fa-bomb fa-beat"></i>';
-            alert(`Hai perso! il tuo punteggio è 000${score}`);
+            alert(`Hai perso! il tuo punteggio è 000${score -1}`);
             score = 0;
+            scoreCounter.innerHTML = '';
         }
     });
 
