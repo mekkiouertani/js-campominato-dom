@@ -72,6 +72,7 @@ function drawSquare(squareIndex, numSquare, bombs){
             alert(`Hai perso! il tuo punteggio è 000${score -1}`);
             score = 0;
             scoreCounter.innerHTML = '';
+            console.log(`hai pescato la bomba ${squareIndex +1}`)
         }
     });
 
@@ -90,7 +91,7 @@ function bombsGenerator(numSquare){
     while (bombList.length < NUM_BOMBS){
         
         let randomBombs = getRndInteger (1, numSquare)
-        console.log(randomBombs);
+        //console.log(randomBombs);
 
         if(!bombList.includes(randomBombs)){
             bombList.push(randomBombs);
