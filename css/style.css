@@ -23,12 +23,11 @@ h1 span{
     aspect-ratio: 1/1;
     min-width: 600px;
     max-width: 600px;
-    background: hsla(335, 91%, 70%, 1);
-    background: linear-gradient(90deg, hsla(335, 91%, 70%, 1) 0%, hsla(49, 89%, 61%, 1) 100%);
-    background: -moz-linear-gradient(90deg, hsla(335, 91%, 70%, 1) 0%, hsla(49, 89%, 61%, 1) 100%);
-    background: -webkit-linear-gradient(90deg, hsla(335, 91%, 70%, 1) 0%, hsla(49, 89%, 61%, 1) 100%);
+    background-image: url(https://media.istockphoto.com/id/460329283/vector/abstract-businessman-with-huge-bomb.jpg?s=612x612&w=0&k=20&c=DTGL2DtiVIV68E9vqR8-_zKMDpD7xETceJhnipMXFCs=);
+    background-repeat: no-repeat;
+    background-size: cover;
     
-    display: flex;
+    display: flex; 
     flex-wrap: wrap;
 }
 
@@ -62,6 +61,11 @@ button span.d-block:hover{
 }
 .square{
     border: 2px solid #f0f0f0;
+    background-color: rgba(255,255,255,.5);
+    border-bottom: 6px inset rgba(0,0,0,.5);
+	border-left: 6px inset rgba(0,0,0,.5);
+	border-right: 6px inset rgba(255,255,255,.5);
+	border-top: 6px inset rgba(255,255,255,.5);
 
     display: flex;
     align-items: center;
