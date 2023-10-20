@@ -58,7 +58,10 @@ function drawSquare(squareIndex, numSquare, bombs){
     square.textContent = squareIndex + 1;
     //aggiungiamo evento per quando clicchiamo sul quadratino
     square.addEventListener('click', function(){
+       
+        //evita più click sulal cella
         if (square.classList.contains('bg-primary')) return;
+
         square.classList.add('bg-primary')
         square.style.color = 'white';
         console.log('hai cliccato sul numero: ', this.textContent);
@@ -66,7 +69,7 @@ function drawSquare(squareIndex, numSquare, bombs){
         if(bombs.includes(parseInt(squareIndex +1))){
             square.classList.add('bg-danger');
             square.innerHTML = '<i class="fa-solid fa-bomb fa-beat"></i>';
-            alert('Hai perso!');
+            alert(`Hai perso! il tuo punteggio è 000${score}`);
             score = 0;
         }
     });
