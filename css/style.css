@@ -1,13 +1,39 @@
-body{
-   background-color: #93ecae;
+body {
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(315deg, hsla(139, 70%, 75%, 1) 0%,hsla(63, 90%, 76%, 1) 100%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+/*     background-image: url(https://78.media.tumblr.com/50d43db43843a7dc2fbb93c660a1d0dc/tumblr_ozar2dfRQI1rh3rypo1_1280.gif);
+    background-size: cover;
+    background-repeat: no-repeat; */
 }
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.cent{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .wrapper{ 
+    
     font-size: 30px;
     font-family: 'Pixelify Sans', sans-serif;
-    background: hsla(139, 70%, 75%, 1);
-    background: linear-gradient(90deg, hsla(139, 70%, 75%, 1) 0%, hsla(63, 90%, 76%, 1) 100%);
-    background: -moz-linear-gradient(90deg, hsla(139, 70%, 75%, 1) 0%, hsla(63, 90%, 76%, 1) 100%);
-    background: -webkit-linear-gradient(90deg, hsla(139, 70%, 75%, 1) 0%, hsla(63, 90%, 76%, 1) 100%);
+    
 }
 h1 span{
     text-shadow: 2px 2px 8px white;
@@ -18,7 +44,6 @@ h1 span{
     background: -moz-linear-gradient(90deg, hsla(139, 70%, 75%, 1) 0%, hsla(63, 90%, 76%, 1) 100%);
     background: -webkit-linear-gradient(90deg, hsla(139, 70%, 75%, 1) 0%, hsla(63, 90%, 76%, 1) 100%);
 }
-
 #playground{
     aspect-ratio: 1/1;
     min-width: 600px;
@@ -35,7 +60,6 @@ h1 span{
     display: flex; 
     flex-wrap: wrap;
 }
-
 button{
     padding: 150px 0;
     margin: 40px;
